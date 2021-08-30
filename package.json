@@ -1,0 +1,17 @@
+{
+  "name": "melch-project",
+  "scripts": {
+    "frontend": "cd groupomania-frontend && npm run start",
+    "backend": "cd groupomania-backend && npm run start",
+    "sass": "sass ./groupomania-frontend/sass/style.scss ./groupomania-frontend/src/styles/style.css --watch --style=compressed",
+    "php": "php -S localhost:8000",
+    "dev": "concurrently -k -n \"Front,Back,Sass,Php\" -c \"#5ef4f3,#75b75a,#c76395,#7377ad\" \"npm run frontend\" \"npm run backend\" \"npm run sass\" \"npm run php\"",
+    "installation": "npm install && git clone https://github.com/ClementPasset/groupomania-frontend.git && git clone https://github.com/ClementPasset/groupomania-backend.git && cd groupomania-frontend && npm install && cd ../groupomania-backend && npm install && cd .. && npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1"
+  },
+  "dependencies": {
+    "multer": "^1.4.3"
+  }
+}
